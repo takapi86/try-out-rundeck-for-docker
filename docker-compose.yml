@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  rundeck:
+    build: ./
+    ports:
+      - 4440:4440
+    command: bash -c 'service rundeckd start && tail -f /var/log/rundeck/service.log'
